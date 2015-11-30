@@ -8,6 +8,10 @@
 			url: '/',
 			templateUrl: '/templates/home.html',
       controller: 'HomeController as vm'
+		}).state('CreateDino', {
+			url: '/Dino/Create',
+			templateUrl: '/templates/create_dino.html',
+			controller: 'CreateDinoController as vm'
 		});
 		$urlRouterProvider.otherwise('/');
 	}
