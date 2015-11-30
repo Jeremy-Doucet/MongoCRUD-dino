@@ -12,6 +12,7 @@
     <h3 ng-show="vm.dino.canFly">IT CAN FLY!</h3>
     <h3 ng-show="!vm.dino.canFly">IT CAN FALL REALLY FAST!</h3>
     <div layout layout-align="center">
+      <md-button class="md-raised md-primary" ui-sref="UpdateDino({id: vm.dino._id})">Edit</md-button>
       <md-button class="md-raised md-warn" ng-click="vm.deleteDino();">!Delete!</md-button>
     </div>
   </md-card>

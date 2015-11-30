@@ -4,6 +4,7 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let Dino = mongoose.model('Dino');
 
+// GET /api/v1/dino
 router.get('/', (req, res) => {
   Dino.find({}).exec((err, result) => {
     if(err) return res.status(500).send(err);
@@ -11,6 +12,7 @@ router.get('/', (req, res) => {
   });
 });
 
+// GET /api/v1/dino/:id
 router.get('/:id', (req, res) => {
   //mongoose method
   Dino.findOne({ _id : req.params.id}).exec((err, result) => {
@@ -30,6 +32,15 @@ router.post('/', (req, res) => {
   });
 });
 
+// PUT /api/v1/dino/:id
+router.put('/:id', (req, res) => {
+ Dino.update({ _id: req.params.id }, req.body, (err, result) => {
+   if(err) res.status(500).send(err);
+   res.send(result);
+ });
+});
+
+// DELETE /api/v1/dino/:id
 router.delete('/:id', (req, res) => {
   Dino.remove({ _id: req.params.id }, (err, result) => {
     if(err) return res.status(500).send(err);

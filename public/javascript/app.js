@@ -16,6 +16,10 @@
 			url: '/Dinos/Create',
 			templateUrl: '/templates/create_dino.html',
 			controller: 'CreateDinoController as vm'
+		}).state('UpdateDino', {
+			url: '/Dinos/Update/:id',
+			templateUrl: '/templates/update_dino.html',
+			controller: 'UpdateDinoController as vm'
 		});
 		$urlRouterProvider.otherwise('/');
 	}
