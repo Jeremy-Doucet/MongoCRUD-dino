@@ -6,9 +6,33 @@
 	function HomeFactory($http, $q) {
 		var o = {};
 
+		o.getAllDinos = function() {
+			var q = $q.defer();
+			$http.get('/api/v1/dino').then(function(res) {
+				q.resolve(res.data);
+			});
+			return q.promise;
+		};
+
+		o.getDinoById = function(id) {
+			var q = $q.defer();
+			$http.get('/api/v1/dino/' + id).then(function(res) {
+				q.resolve(res.data);
+			});
+			return q.promise;
+		};
+
 		o.createDino = function(dino) {
 			var q = $q.defer();
 			$http.post('/api/v1/dino', dino).then(function() {
+				q.resolve();
+			});
+			return q.promise;
+		};
+
+		o.deleteDino = function(id) {
+			var q = $q.defer();
+			$http.delete('/api/v1/dino/' + id).then(function() {
 				q.resolve();
 			});
 			return q.promise;

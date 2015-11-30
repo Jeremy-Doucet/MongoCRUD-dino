@@ -24,8 +24,7 @@ let dinoRoutes = require('./routes/dinoRoutes');
 app.get('/', (req, res) => {
 	res.render('index');
 });
-
-app.use('/api/v1', dinoRoutes);
+app.use('/api/v1/dino', dinoRoutes);
 
 module.exports = app.listen(port, () => {
 	console.log('Example app listening at http://localhost:' + port);

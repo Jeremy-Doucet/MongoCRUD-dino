@@ -3,11 +3,14 @@
 <head>
 	<title>coder-camps-js</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 <body>
+	<md-toolbar layout>
+		<span flex></span>
+		<md-button ui-sref="CreateDino">Create</md-button>
+	</md-toolbar>
 	<ui-view></ui-view>
 	<!-- Ext Libs -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
@@ -19,5 +22,6 @@
 	<script src="/javascript/services/HomeFactory.js"></script>
 	<script src="/javascript/controllers/HomeController.js"></script>
 	<script src="/javascript/controllers/CreateDinoController.js"></script>
+	<script src="/javascript/controllers/DinoDetailsController.js"></script>
 </body>
 </html>

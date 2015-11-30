@@ -3,8 +3,11 @@
 	angular.module('app')
 	.controller('HomeController', HomeController);
 
-	function HomeController() {
+	function HomeController(HomeFactory) {
 		var vm = this;
-		vm.title = 'Welcome to our App!';
+
+		HomeFactory.getAllDinos().then(function(res) {
+			vm.dinos = res;
+		});
 	}
 })();
