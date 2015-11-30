@@ -4,6 +4,13 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let Dino = mongoose.model('Dino');
 
+router.get('/dino', (req, res) => {
+  Dino.find({}).exec((err, result) => {
+    if(err) return res.status(500).send(err);
+    res.send(result);
+  });
+});
+
 // POST /api/v1/dino
 router.post('/dino', (req, res) => {
   let new_dino = new Dino(req.body);
